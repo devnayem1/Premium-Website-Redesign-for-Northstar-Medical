@@ -209,7 +209,7 @@ nav a:hover,nav a.active{color:var(--clr-primary);border-color:var(--clr-primary
 .service-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}
 .service-card{background:var(--clr-light);border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--clr-border);cursor:pointer;transition:box-shadow .3s,transform .3s}
 .service-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
-.sc-img{height:180px;overflow:hidden}
+.sc-img{height:320px;overflow:hidden}
 .sc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .service-card:hover .sc-img img{transform:scale(1.04)}
 .sc-body{padding:20px}
