@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Northstar Medical – Your Health, Your Choice.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========================
+     THEME SWITCHER
+     ======================== -->
+<div id="theme-switcher">
+  <div class="switcher-tab" onclick="toggleSwitcher()">🎨 Themes</div>
+  <div class="switcher-panel">
+    <h4>Colour & Font Options</h4>
+    <div class="theme-option active" onclick="setTheme(1,this)">
+      <div class="theme-swatch" style="background:linear-gradient(135deg,#006863,#12488F)"></div>
+      <div><strong>1 · Premium Medical</strong><span class="theme-desc">Playfair + Poppins · Teal</span></div>
+    </div>
+    <div class="theme-option" onclick="setTheme(2,this)">
+      <div class="theme-swatch" style="background:linear-gradient(135deg,#1B5FA8,#00B4D8)"></div>
+      <div><strong>2 · Modern Healthcare</strong><span class="theme-desc">DM Serif + Inter · Blue</span></div>
+    </div>
+    <div class="theme-option" onclick="setTheme(3,this)">
+      <div class="theme-swatch" style="background:linear-gradient(135deg,#4A7C59,#D4A373)"></div>
+      <div><strong>3 · Calm Wellness</strong><span class="theme-desc">Cormorant + Manrope · Sage</span></div>
+    </div>
+    <div class="theme-option" onclick="setTheme(4,this)">
+      <div class="theme-swatch" style="background:linear-gradient(135deg,#1C2B5E,#4A6FA5)"></div>
+      <div><strong>4 · Scandinavian</strong><span class="theme-desc">Libre Baskerville + Jakarta · Navy</span></div>
+    </div>
+    <div class="theme-option" onclick="setTheme(5,this)">
+      <div class="theme-swatch" style="background:linear-gradient(135deg,#0F3D2E,#00C896)"></div>
+      <div><strong>5 · Future Health</strong><span class="theme-desc">Marcellus + Inter · Forest</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================
+     HEADER
+     ======================== -->
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">
+      <div class="logo-star">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+      </div>
+      <span>Northstar<br><small style="font-size:.65em;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-body);font-weight:400;opacity:.7">Medical</small></span>
+    </a>
+    <nav id="main-nav">
+      <a href="#" class="active" onclick="showPage('home');closeMobileNav()">Home</a>
+      <a href="#" onclick="showPage('services');closeMobileNav()">Services</a>
+      <a href="#" onclick="showPage('home');scrollToSection('hiw');closeMobileNav()">How It Works</a>
+      <a href="#" onclick="showPage('home');scrollToSection('pricing');closeMobileNav()">Pricing</a>
+      <a href="#" onclick="showPage('home');scrollToSection('about');closeMobileNav()">About Us</a>
+      <a href="#" onclick="showPage('home');scrollToSection('faq');closeMobileNav()">FAQ</a>
+      <a href="#" onclick="closeMobileNav()">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="sign-in" onclick="showPage('signin');return false;">Sign In</a>
+      <a href="#" class="get-care btn-primary" onclick="showPage('home');scrollToSection('pricing')">Get Care Now</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ========================
+     HOME PAGE
+     ======================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Virtual Primary Care in Ontario</div>
+      <h1>Your health,<br><em>your choice.</em></h1>
+      <p class="hero-sub">Quality primary care, on your terms. Virtual visits with licensed Ontario nurse practitioners — real care, right when you need it.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Get Care Now</a>
+        <a href="#" class="btn-secondary" onclick="scrollToSection('hiw')">How It Works →</a>
+      </div>
+      <div class="trust-bar">
+        <div class="trust-item">
+          <div class="ti-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          Ontario Licensed
+        </div>
+        <div class="trust-item">
+          <div class="ti-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          PHIPA Compliant
+        </div>
+        <div class="trust-item">
+          <div class="ti-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          Same-Day Care
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=85&auto=format&fit=crop&crop=faces" alt="Patient in virtual medical consultation" loading="eager"/>
+      </div>
+      <div class="hero-stat-card s1">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">Patients across Ontario</div>
+      </div>
+      <div class="hero-stat-card s2">
+        <div class="stat-num">Same-Day</div>
+        <div class="stat-label">Appointments available</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="hiw" id="hiw">
+    <div class="hiw-inner">
+      <div class="hiw-header">
+        <div class="section-label">Simple Process</div>
+        <h2>How Northstar Medical Works</h2>
+        <p>Quality care in 3 simple steps — no waiting rooms, no hassle.</p>
+      </div>
+      <div class="hiw-steps">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Book Your Visit</h3>
+          <p>Choose your service and pick a time that works for you — often available the same day.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Connect Virtually</h3>
+          <p>Join a secure video call with a licensed Ontario nurse practitioner from your phone or computer.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Get Care &amp; Support</h3>
+          <p>Receive prescriptions, sick notes, lab requisitions, referrals, and personalized follow-up care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview" id="services-section">
+    <div class="sp-inner">
+      <div class="sp-header">
+        <div>
+          <div class="section-label">What We Offer</div>
+          <h2>Our Services</h2>
+        </div>
+        <a href="#" class="btn-secondary" onclick="showPage('services')">View All Services →</a>
+      </div>
+      <div class="service-cards-grid">
+        <div class="service-card" onclick="showPage('services')">
+          <div class="sc-img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Virtual Visits" loading="lazy"/></div>
+          <div class="sc-body"><div class="sc-tag">Same-Day Primary Care</div><h3>Virtual Visits</h3><p>Speak with a licensed Ontario nurse practitioner online — often the same day.</p></div>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <div class="sc-img"><img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&q=80&auto=format&fit=crop" alt="Prescriptions" loading="lazy"/></div>
+          <div class="sc-body"><div class="sc-tag">Medication Management</div><h3>Prescriptions</h3><p>Get prescriptions renewed and manage your medications with ease.</p></div>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <div class="sc-img"><img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=600&q=80&auto=format&fit=crop" alt="Sick Notes" loading="lazy"/></div>
+          <div class="sc-body"><div class="sc-tag">Medical Documentation</div><h3>Sick Notes</h3><p>Professional medical notes for work, school, or travel — fast and efficient.</p></div>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <div class="sc-img"><img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=600&q=80&auto=format&fit=crop" alt="Lab Requisitions" loading="lazy"/></div>
+          <div class="sc-body"><div class="sc-tag">Diagnostic Testing</div><h3>Lab Requisitions</h3><p>Access lab tests and referrals to trusted specialists when you need them.</p></div>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <div class="sc-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Specialist Referrals" loading="lazy"/></div>
+          <div class="sc-body"><div class="sc-tag">Specialist Access</div><h3>Specialist Referrals</h3><p>Get referrals to trusted Ontario specialists, coordinated through your care team.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-inner">
+      <div class="pricing-header">
+        <div class="section-label">Transparent Pricing</div>
+        <h2>Choose what works best for you</h2>
+        <p>No hidden fees. No surprises. Just quality care.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Pay Per Visit</h3>
+          <div class="price-sub">One-Time Visit</div>
+          <div class="price-amount">
+            <span class="dollar">$39<sup style="font-size:.5em">.95</sup></span>
+            <span class="period">/ visit</span>
+          </div>
+          <ul class="price-features">
+            <li>Same-day virtual appointment</li>
+            <li>Consultation with experienced nurse practitioner</li>
+            <li>Prescriptions when appropriate</li>
+            <li>Lab requisitions if needed</li>
+          </ul>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;display:block">Get Started</a>
+        </div>
+        <div class="price-card featured">
+          <div class="featured-badge">⭐ Most Popular</div>
+          <h3>Monthly Subscription</h3>
+          <div class="price-sub">Northstar+</div>
+          <div class="price-amount">
+            <span class="dollar">$69<sup style="font-size:.5em">.95</sup></span>
+            <span class="period">/ month</span>
+          </div>
+          <ul class="price-features">
+            <li>Unlimited virtual visits</li>
+            <li>Consultation with experienced nurse practitioner</li>
+            <li>Prescriptions when appropriate</li>
+            <li>Lab requisitions if needed</li>
+            <li>Free sick notes</li>
+            <li>Free access to personal health records</li>
+          </ul>
+          <a href="#" class="btn-primary" style="width:100%;text-align:center;display:block">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="about">
+    <div class="t-inner">
+      <div class="t-header">
+        <div class="section-label">Patient Stories</div>
+        <h2>What Our Patients Say</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Northstar Medical made it so easy to get care when I needed it. Same-day appointment, prescription sent to my pharmacy within the hour."</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Sarah"/>
+            <div><div class="name">Sarah M.</div><div class="loc">Toronto, ON</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Professional, compassionate, and so convenient. This is what modern healthcare should look and feel like. My whole family uses Northstar+."</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James"/>
+            <div><div class="name">James T.</div><div class="loc">Mississauga, ON</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"As a busy mom, knowing quality care is just a click away is life-changing. Got a sick note for my daughter in under 30 minutes."</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Priya"/>
+            <div><div class="name">Priya S.</div><div class="loc">Ottawa, ON</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <div class="section-label">Common Questions</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is Northstar Medical covered by OHIP?<div class="faq-icon"></div></div>
+        <div class="faq-a"><p>Northstar Medical is not currently covered by OHIP. Our services are offered on a fee-for-service basis. However, many patients find our pricing transparent and affordable — and some workplace benefits plans may cover virtual care visits.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How quickly can I see a doctor?<div class="faq-icon"></div></div>
+        <div class="faq-a"><p>We offer same-day appointments for most services. After booking, you'll typically be connected with a licensed nurse practitioner within hours — sometimes sooner.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I need a prescription?<div class="faq-icon"></div></div>
+        <div class="faq-a"><p>If clinically appropriate, your nurse practitioner can prescribe medication during your virtual visit. Prescriptions are sent electronically directly to your preferred pharmacy in Ontario.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is my information secure?<div class="faq-icon"></div></div>
+        <div class="faq-a"><p>Absolutely. Northstar Medical is fully PHIPA compliant. All communications are encrypted and your health information is stored securely in accordance with Ontario's privacy legislation.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I cancel my Northstar+ subscription?<div class="faq-icon"></div></div>
+        <div class="faq-a"><p>Yes, you can cancel anytime. There are no long-term contracts or cancellation fees. Your subscription stays active until the end of your current billing period.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" id="contact">
+    <div class="cta-inner">
+      <div class="section-label">Ready to start?</div>
+      <h2>Quality care is just a click away.</h2>
+      <p>Join thousands of Ontarians who trust Northstar Medical for their health.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary" style="background:#fff;color:var(--clr-primary)">Get Started</a>
+        <a href="#" class="btn-outline" onclick="scrollToSection('hiw')">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-star"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg></div>
+            <span>Northstar Medical</span>
+          </div>
+          <p>"Your health, your choice." Premium virtual primary care across Ontario. Licensed nurse practitioners. Same-day appointments. Care that feels personal.</p>
+          <div class="social-links">
+            <a class="social-link" href="#" aria-label="Facebook">f</a>
+            <a class="social-link" href="#" aria-label="Instagram">in</a>
+            <a class="social-link" href="#" aria-label="LinkedIn">li</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('services')">Virtual Visits</a></li>
+            <li><a href="#" onclick="showPage('services')">Prescriptions</a></li>
+            <li><a href="#" onclick="showPage('services')">Medical Documents</a></li>
+            <li><a href="#" onclick="showPage('services')">Lab Requisitions</a></li>
+            <li><a href="#" onclick="showPage('services')">Referrals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Doctors</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#" onclick="scrollToSection('faq')">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-cta-col">
+          <h4>Get Care Now</h4>
+          <p class="fc-cta-text">Quality care is just a click away.</p>
+          <p>Same-day virtual appointments with Ontario-licensed nurse practitioners. Start your care journey today.</p>
+          <a href="#" class="btn-primary">Get Started</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Northstar Medical. All rights reserved. Serving patients across Ontario.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /#page-home -->
+
+<!-- ========================
+     SERVICES PAGE
+     ======================== -->
+<div id="page-services" class="page">
+
+  <!-- SERVICES HERO -->
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <div class="svc-hero-content">
+        <div class="section-label">Our Services</div>
+        <h1>Care that fits your life.</h1>
+        <p>Comprehensive virtual primary care services designed for your convenience and peace of mind. Licensed Ontario nurse practitioners, available the same day.</p>
+      </div>
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85&auto=format&fit=crop&crop=faces" alt="Healthcare professional" loading="eager"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE CARDS -->
+  <section class="svc-list">
+    <div class="svc-list-inner">
+
+      <!-- 1. Virtual Visits -->
+      <div class="svc-card">
+        <div class="svc-card-body">
+          <span class="svc-card-num">01</span>
+          <div class="svc-card-tag">Same-Day Primary Care</div>
+          <h2>Virtual Visits</h2>
+          <p>See a licensed Ontario nurse practitioner online, often the same day — from the comfort of your home. No waiting rooms, no travel, no hassle.</p>
+          <ul class="svc-features">
+            <li>Same-day appointments available</li>
+            <li>Discuss symptoms, conditions, and concerns</li>
+            <li>Personalized treatment plans</li>
+            <li>Secure, encrypted video calls</li>
+          </ul>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Book a Visit</a>
+        </div>
+        <div class="svc-card-img">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=85&auto=format&fit=crop&crop=faces" alt="Video consultation with doctor on laptop" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- 2. Prescriptions -->
+      <div class="svc-card">
+        <div class="svc-card-body">
+          <span class="svc-card-num">02</span>
+          <div class="svc-card-tag">Medication Management</div>
+          <h2>Prescriptions &amp; Medication Management</h2>
+          <p>Get prescriptions renewed and manage your medications with ease. Your nurse practitioner can prescribe, review, and adjust medications electronically — sent directly to your pharmacy.</p>
+          <ul class="svc-features">
+            <li>Prescription renewals</li>
+            <li>Medication reviews &amp; adjustments</li>
+            <li>Electronic prescriptions to your pharmacy</li>
+            <li>Ongoing medication management</li>
+          </ul>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Get Started</a>
+        </div>
+        <div class="svc-card-img">
+          <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&q=85&auto=format&fit=crop" alt="Pharmacist reviewing digital prescription on tablet" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- 3. Sick Notes -->
+      <div class="svc-card">
+        <div class="svc-card-body">
+          <span class="svc-card-num">03</span>
+          <div class="svc-card-tag">Medical Documentation</div>
+          <h2>Sick Notes &amp; Medical Documentation</h2>
+          <p>Professional medical notes and documents for work, school, or travel — prepared quickly and professionally by your nurse practitioner without needing an in-person visit.</p>
+          <ul class="svc-features">
+            <li>Sick notes for work &amp; school</li>
+            <li>Medical certificates</li>
+            <li>Travel health documents</li>
+            <li>Digital delivery within hours</li>
+          </ul>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Get a Sick Note</a>
+        </div>
+        <div class="svc-card-img">
+          <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=85&auto=format&fit=crop" alt="Nurse practitioner completing digital medical documentation" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- 4. Lab Requisitions -->
+      <div class="svc-card">
+        <div class="svc-card-body">
+          <span class="svc-card-num">04</span>
+          <div class="svc-card-tag">Diagnostic Testing</div>
+          <h2>Lab Requisitions</h2>
+          <p>Access the lab tests you need without the wait. Your nurse practitioner can order requisitions during your virtual visit, which you take to any Ontario lab at your convenience.</p>
+          <ul class="svc-features">
+            <li>Blood work &amp; urine tests</li>
+            <li>Requisitions accepted province-wide</li>
+            <li>Results reviewed with your care team</li>
+            <li>Follow-up support included</li>
+          </ul>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Order Lab Tests</a>
+        </div>
+        <div class="svc-card-img">
+          <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=800&q=85&auto=format&fit=crop" alt="Modern clinical laboratory with digital equipment" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- 5. Specialist Referrals -->
+      <div class="svc-card">
+        <div class="svc-card-body">
+          <span class="svc-card-num">05</span>
+          <div class="svc-card-tag">Specialist Access</div>
+          <h2>Specialist Referrals</h2>
+          <p>When you need specialist care, Northstar Medical coordinates referrals to trusted Ontario specialists, so you get the right care from the right provider without delays.</p>
+          <ul class="svc-features">
+            <li>Referrals to trusted Ontario specialists</li>
+            <li>Coordinated care handoff</li>
+            <li>Follow-up support from your care team</li>
+            <li>Ongoing communication &amp; care continuity</li>
+          </ul>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Request a Referral</a>
+        </div>
+        <div class="svc-card-img">
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=85&auto=format&fit=crop&crop=faces" alt="Specialist doctor consulting digitally with patient" loading="lazy"/>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES CTA -->
+  <section class="svc-cta">
+    <div class="svc-cta-inner">
+      <div class="section-label" style="color:rgba(255,255,255,.6);justify-content:center">Ready to get started?</div>
+      <h2 style="color:#fff">Quality care is just a click away.</h2>
+      <p style="color:rgba(255,255,255,.8)">Join thousands of Ontarians who trust Northstar Medical for their health.</p>
+      <a href="#" class="btn-primary" style="background:#fff;color:var(--clr-primary)" onclick="showPage('home');scrollToSection('pricing')">Get Care Now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (Services Page) -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-star"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg></div>
+            <span>Northstar Medical</span>
+          </div>
+          <p>"Your health, your choice." Premium virtual primary care across Ontario. Licensed nurse practitioners. Same-day appointments. Care that feels personal.</p>
+          <div class="social-links">
+            <a class="social-link" href="#" aria-label="Facebook">f</a>
+            <a class="social-link" href="#" aria-label="Instagram">in</a>
+            <a class="social-link" href="#" aria-label="LinkedIn">li</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('services')">Virtual Visits</a></li>
+            <li><a href="#" onclick="showPage('services')">Prescriptions</a></li>
+            <li><a href="#" onclick="showPage('services')">Medical Documents</a></li>
+            <li><a href="#" onclick="showPage('services')">Lab Requisitions</a></li>
+            <li><a href="#" onclick="showPage('services')">Referrals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Doctors</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('home');scrollToSection('faq')">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-cta-col">
+          <h4>Get Care Now</h4>
+          <p class="fc-cta-text">Quality care is just a click away.</p>
+          <p>Same-day virtual appointments with Ontario-licensed nurse practitioners. Start your care journey today.</p>
+          <a href="#" class="btn-primary" onclick="showPage('home');scrollToSection('pricing')">Get Started</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Northstar Medical. All rights reserved. Serving patients across Ontario.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /#page-services -->
+
+<!-- ========================
+     SIGN IN PAGE
+     ======================== -->
+<div id="page-signin" class="page">
+  <section class="signin-wrap">
+    <div class="signin-left">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=85&auto=format&fit=crop&crop=faces" alt="Virtual care"/>
+      <div class="signin-left-overlay">
+        <div class="nav-logo" style="color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:32px">
+          <div class="logo-star"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#fff"/></svg></div>
+          <span style="font-family:var(--font-head);font-size:20px;font-weight:700">Northstar Medical</span>
+        </div>
+        <h2 style="font-family:var(--font-head);font-size:clamp(28px,4vw,44px);color:#fff;margin-bottom:16px;line-height:1.2">Your health,<br><em>your choice.</em></h2>
+        <p style="color:rgba(255,255,255,.75);font-size:16px;line-height:1.7">Access your patient portal, view health records, and manage your care — all in one secure place.</p>
+      </div>
+    </div>
+    <div class="signin-right">
+      <div class="signin-card">
+        <a href="#" onclick="showPage('home');return false;" class="signin-back">← Back to Home</a>
+        <div class="section-label" style="margin-bottom:20px">Patient Portal</div>
+        <h2 style="font-size:clamp(24px,3vw,32px);margin-bottom:8px">Welcome back</h2>
+        <p style="color:var(--clr-muted);font-size:15px;margin-bottom:36px">Sign in to access your patient portal.</p>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="you@example.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="display:flex;justify-content:space-between"><span>Password</span><a href="#" style="font-size:13px;color:var(--clr-primary)">Forgot password?</a></label>
+          <input type="password" class="form-input" placeholder="••••••••"/>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:28px">
+          <input type="checkbox" id="remember" style="accent-color:var(--clr-primary);width:16px;height:16px"/>
+          <label for="remember" style="font-size:14px;color:var(--clr-muted)">Remember me</label>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:15px;font-size:16px;border-radius:var(--btn-radius)">Sign In →</button>
+        <div class="signin-divider"><span>or</span></div>
+        <p style="text-align:center;font-size:14px;color:var(--clr-muted)">Don't have an account? <a href="#" onclick="showPage('home');scrollToSection('pricing');return false;" style="color:var(--clr-primary);font-weight:600">Create one free</a></p>
+      </div>
+    </div>
+  </section>
+</div><!-- /#page-signin -->
+
+<script src="script.js"></script>
+</body>
+</html>
